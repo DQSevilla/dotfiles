@@ -1,0 +1,26 @@
+# Adapted from ~/.bashrc and ~/.bashrc.aliases
+
+# Basic shell command aliases
+alias ls='ls --color=auto -F'
+alias ll='ls -lhA'
+alias la='ls -A'
+alias lsl='ls -lhFA | less'
+
+alias ..='cd ..'
+
+alias mkdir='mkdir -p'
+
+alias df='df -Th --total'
+alias free='free -ht'
+
+# Arch aliases
+alias pacrepo='sudo reflector -l 20 -f 10 --save /etc/pacman.d/mirrorlist'
+alias pac='sudo pacman'
+alias journalctl='sudo journalctl'
+alias systemctl='sudo systemctl'
+alias pacu='sudo pacman -Syu --noconfirm'
+alias auru='yay -Syu'
+alias se='ls /usr/bin | grep'
+
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
