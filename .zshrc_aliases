@@ -23,4 +23,5 @@ alias auru='yay -Syu'
 alias se='ls /usr/bin | grep'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias jn='jupyter notebook'
 

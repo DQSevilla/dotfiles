@@ -33,6 +33,9 @@ Plug 'morhetz/gruvbox'
 " Language packages
 Plug 'sheerun/vim-polyglot'
 
+" Syntastic
+Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 "" End Plugins
 
@@ -106,27 +109,11 @@ set laststatus=2
 set noshowmode
 set noshowcmd
 
-" Searching
-" nnoremap / /\v
-" vnoremap / /\v
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 set showmatch
-" map <leader><space> :let @/=''<cr> " clear search
-
-" Formatting
-" map <leader>q gqip
-
-" Color scheme (terminal)
-" set t_Co=256
-" set background=dark
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors and uncomment:
-" colorscheme solarized
 
 "" Plugin configs and more
 
@@ -138,11 +125,11 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='minimalist'
 let g:airline#extensions#tabline#enabled = 1
 
-" Minimalist theme configuration
+" Theme configuration
 set t_Co=256
-" colorscheme minimalist
 colorscheme gruvbox
 
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+let g:syntastic_ocaml_checkers = ['merlin']
 
