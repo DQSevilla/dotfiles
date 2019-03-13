@@ -105,9 +105,6 @@ fi
 # Configure node version manager
 source /usr/share/nvm/init-nvm.sh
 
-# Startup scripts
-screenfetch -A 'Arch Linux'
-
 # opam configuration
 test -r /home/dsevilla/.opam/opam-init/init.zsh && . /home/dsevilla/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
