@@ -1,0 +1,21 @@
+
+# Customise the Powerlevel9k prompts
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  custom_arch_logo
+  custom_context
+  dir
+  vcs
+  newline
+  status
+)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+  vi_mode
+  ssh
+)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+POWERLEVEL9K_CUSTOM_ARCH_LOGO="echo -ne '\uf303'"
+#POWERLEVEL9K_CUSTOM_ARCH_LOGO="echo -ne '\uf303' $(whoami)@$(hostname)"
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+

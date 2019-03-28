@@ -5,7 +5,7 @@ export ZSH="/home/dsevilla/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,4 +107,7 @@ source /usr/share/nvm/init-nvm.sh
 
 # opam configuration
 test -r /home/dsevilla/.opam/opam-init/init.zsh && . /home/dsevilla/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# source ~/.purepower
+source ~/.zshtheme
 
