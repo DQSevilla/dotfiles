@@ -1,11 +1,37 @@
 
+function zsh_package_json() {
+  local pkgjson=$(pwd)/package.json
+  if [[ -f $pkgjson ]]; then
+    local nodev npmv pkgv
+
+    if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_NODV != 'false' ]]; then
+      nodev=$'\ue718 '$(node --version)
+    fi
+
+    if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_NPMV != 'false' ]]; then
+      npmv=$'\ue71e '$(npm --version)
+    fi
+
+    if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_PKGV != 'false' ]]; then
+      local actualpkgv=$(node -p "require('$pkgjson').version || ''")
+      [[ -z $actualpkgv ]] || pkgv=$'\uf8d2 '$actualpkgv
+    fi
+
+    env echo -ne $nodev $npmv $pkgv
+  fi
+}
+
+export POWERLEVEL9K_CUSTOM_PACKAGE_JSON=zsh_package_json
+
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_arch_logo
+#  custom_arch_logo
   custom_context
   dir
   vcs
+  custom_package_json
   newline
+  custom_arch_logo
   status
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
@@ -13,9 +39,10 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   ssh
 )
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-
+POWERLEVEL9K_STATUS_OK=false
 POWERLEVEL9K_CUSTOM_ARCH_LOGO="echo -ne '\uf303'"
 #POWERLEVEL9K_CUSTOM_ARCH_LOGO="echo -ne '\uf303' $(whoami)@$(hostname)"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
+
 
