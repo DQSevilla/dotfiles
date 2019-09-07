@@ -27,4 +27,5 @@ alias jn='jupyter notebook'
 
 # Other
 alias start-apue='VBoxManage startvm "apue" --type headless'
+alias apue='start-apue && sleep 60 && ssh apue'
 
