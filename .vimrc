@@ -75,7 +75,7 @@ set expandtab " change tab to spaces
 set noshiftround " just keep this
 
 "" File specific whitespace rules
-au FileType python,java,c,cpp setlocal ts=4 sw=4 sts=4
+au FileType python,java,c,cpp,erlang setlocal ts=4 sw=4 sts=4
 
 au FileType make setlocal noexpandtab sw=4 sts=0 ts=4
 "" End file specific whitespace rules
