@@ -85,6 +85,8 @@ fi
 export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/firefox-developer-edition
 
+export GOPATH=$HOME/.go
+
 export QT_STYLE_OVERRIDE=gtk
 export QT_SELECT=qt5
 

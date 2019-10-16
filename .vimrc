@@ -27,6 +27,9 @@ Plug 'airblade/vim-gitgutter'
 " Minimalist theme
 Plug 'dikiaap/minimalist'
 
+" Go utilities
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Gruvbox theme
 Plug 'morhetz/gruvbox'
 
@@ -77,7 +80,7 @@ set noshiftround " just keep this
 "" File specific whitespace rules
 au FileType python,java,c,cpp,erlang setlocal ts=4 sw=4 sts=4
 
-au FileType make setlocal noexpandtab sw=4 sts=0 ts=4
+au FileType make,go setlocal noexpandtab sw=4 sts=0 ts=4
 "" End file specific whitespace rules
 
 " Cursor motion
@@ -132,4 +135,17 @@ colorscheme gruvbox
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 let g:syntastic_ocaml_checkers = ['merlin']
+
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+" Polygot and vim-go conflict:
+let g:polygot_disabled = ['go']
 
