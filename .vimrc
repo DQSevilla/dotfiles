@@ -149,3 +149,10 @@ let g:syntastic_check_on_wq = 0
 " Polygot and vim-go conflict:
 let g:polygot_disabled = ['go']
 
+" vim-go additions
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+
