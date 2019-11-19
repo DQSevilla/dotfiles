@@ -32,3 +32,4 @@ alias jn='jupyter notebook'
 alias start-apue='VBoxManage startvm "apue" --type headless'
 alias apue='start-apue && sleep 60 && ssh apue'
 
+alias cmsdb='psql -h cms.db.nonprod.lifeskillssoftware.tech -p 5432 -d lss_cms -U lss-admin'
