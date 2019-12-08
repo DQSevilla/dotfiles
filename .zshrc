@@ -90,6 +90,8 @@ export GOPATH=$HOME/.go
 export QT_STYLE_OVERRIDE=gtk
 export QT_SELECT=qt5
 
+export CMSDIR=$HOME/src/lss/lss-cms
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
