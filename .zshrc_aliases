@@ -13,7 +13,6 @@ alias mkdir='mkdir -p'
 alias df='df -Th --total'
 alias free='free -ht'
 
-alias poff='sudo poweroff'
 alias ping3='ping google.com -c 3'
 
 # Arch aliases
