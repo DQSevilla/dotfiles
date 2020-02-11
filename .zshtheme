@@ -2,7 +2,7 @@
 function zsh_package_json() {
   local pkgjson=$(pwd)/package.json
   if [[ -f $pkgjson ]]; then
-    local nodev npmv pkgv
+    local nodev npmv #pkgv
 
     if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_NODV != 'false' ]]; then
       nodev=$'\ue718 '$(node --version)
@@ -12,12 +12,12 @@ function zsh_package_json() {
       npmv=$'\ue71e '$(npm --version)
     fi
 
-    if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_PKGV != 'false' ]]; then
-      local actualpkgv=$(node -p "require('$pkgjson').version || ''")
-      [[ -z $actualpkgv ]] || pkgv=$'\uf8d2 '$actualpkgv
-    fi
+    #if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_PKGV != 'false' ]]; then
+    #  local actualpkgv=$(node -p "require('$pkgjson').version || ''")
+    #  [[ -z $actualpkgv ]] || pkgv=$'\uf8d2 '$actualpkgv
+    #fi
 
-    env echo -ne $nodev $npmv $pkgv
+    env echo -ne $nodev $npmv #$pkgv
   fi
 }
 

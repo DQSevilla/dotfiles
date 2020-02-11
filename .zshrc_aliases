@@ -28,8 +28,21 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias jn='jupyter notebook'
 
 # Other
-alias start-apue='VBoxManage startvm "apue" --type headless'
-alias apue='start-apue && sleep 60 && ssh apue'
-
 alias cmsdb='psql -h cms.db.nonprod.lifeskillssoftware.tech -p 5432 -d lss_cms -U lss-admin'
 alias e='$EDITOR'
+alias gdfuse='google-drive-ocamlfuse'
+
+# AWS CLI
+alias console='aws ec2 get-console-output --instance-id'
+alias ec2wait='aws ec2 wait instance-running --instance-id'
+alias instance='aws ec2 run-instances --key-name NetBSDKeyPair --image-id'
+alias instances='aws ec2 describe-instances'
+alias running='instances --query Reservations[*].Instances[*].[InstanceId] \
+  --filters Name=instance-state-name,Values=running'
+alias start-debian='instance ami-0dedf6a6502877301 --instance-type t2.micro'
+alias start-fedora'instance ami-0fcbe88944a53b4c8 --instance-type t1.micro'
+alias start-freebsd='instance ami-0de268ac2498ba33d'
+alias start-netbsd='instance ami-569ed93c --instance-type t1.micro'
+alias start-omnios='instance ami-0a01a5636f3c4f21c --instance-type t1.micro'
+alias start-ubuntu='instance ami-08bc77a2c7eb2b1da --instance-type t1.micro'
+alias term-instances='aws ec2 terminate-instances --instance-ids'

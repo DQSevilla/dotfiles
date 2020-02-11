@@ -39,6 +39,10 @@ Plug 'sheerun/vim-polyglot'
 " Syntastic
 Plug 'vim-syntastic/syntastic'
 
+" Typescript support
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
 call plug#end()
 "" End Plugins
 
@@ -84,6 +88,9 @@ au FileType make,go setlocal noexpandtab sw=4 sts=0 ts=4
 
 au Filetype ocaml nnoremap <buffer> <localLeader>l :MerlinLocate<CR>
 "" End file specific whitespace rules
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Cursor motion
 set scrolloff=3

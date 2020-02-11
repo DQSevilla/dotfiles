@@ -95,17 +95,17 @@ export QT_SELECT=qt5
 
 export CMSDIR=$HOME/src/lss/lss-cms
 
+# OCaml / Opam: generate cmt files for merlin definition jumping
+export OPAMKEEPBUILDDIR=true
+export OCAMLPARAM="_,bin-annot=1"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-export CUDA_HOME=/opt/cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
-export PATH=$PATH:$CUDA_HOME/bin
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set zsh editing mode
+# Set zsh editing mode to vi
 bindkey -v
 
 # Aliases
