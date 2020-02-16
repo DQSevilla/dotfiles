@@ -40,7 +40,7 @@ alias instances='aws ec2 describe-instances'
 alias running='instances --query Reservations[*].Instances[*].[InstanceId] \
   --filters Name=instance-state-name,Values=running'
 alias start-debian='instance ami-0dedf6a6502877301 --instance-type t2.micro'
-alias start-fedora'instance ami-0fcbe88944a53b4c8 --instance-type t1.micro'
+alias start-fedora='instance ami-0fcbe88944a53b4c8 --instance-type t1.micro'
 alias start-freebsd='instance ami-0de268ac2498ba33d'
 alias start-netbsd='instance ami-569ed93c --instance-type t1.micro'
 alias start-omnios='instance ami-0a01a5636f3c4f21c --instance-type t1.micro'
