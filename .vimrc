@@ -165,3 +165,6 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 
+" OCaml ocp-indent-vim TODO: package this up?
+set rtp+=~/src/github/ocp-indent-vim
+
