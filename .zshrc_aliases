@@ -15,6 +15,8 @@ alias free='free -ht'
 
 alias ping3='ping google.com -c 3'
 
+alias ssh='TERM=xterm ssh'
+
 # Arch aliases
 alias pacrepo='sudo reflector -l 20 -f 10 --save /etc/pacman.d/mirrorlist'
 alias pac='sudo pacman'
@@ -31,6 +33,7 @@ alias jn='jupyter notebook'
 alias cmsdb='psql -h cms.db.nonprod.lifeskillssoftware.tech -p 5432 -d lss_cms -U lss-admin'
 alias e='$EDITOR'
 alias gdfuse='google-drive-ocamlfuse'
+alias vscode='code --disable-gpu'
 
 # AWS CLI
 alias console='aws ec2 get-console-output --instance-id'
@@ -46,3 +49,6 @@ alias start-netbsd='instance ami-569ed93c --instance-type t1.micro'
 alias start-omnios='instance ami-0a01a5636f3c4f21c --instance-type t1.micro'
 alias start-ubuntu='instance ami-08bc77a2c7eb2b1da --instance-type t1.micro'
 alias term-instances='aws ec2 terminate-instances --instance-ids'
+alias term-all-instances='term-instances $(instances --query \
+  "Reservations[*].Instances[0].InstanceId" --output text)'
+alias volumes='aws ec2 describe-volumes'

@@ -89,6 +89,7 @@ export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/firefox-developer-edition
 
 export GOPATH=$HOME/.go
+export PATH=$PATH:~/.go/bin
 
 export QT_STYLE_OVERRIDE=gtk
 export QT_SELECT=qt5
@@ -121,4 +122,3 @@ test -r /home/dsevilla/.opam/opam-init/init.zsh && . /home/dsevilla/.opam/opam-i
 
 # source ~/.purepower
 source ~/.zshtheme
-
