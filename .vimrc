@@ -168,3 +168,5 @@ let g:go_highlight_operators = 1
 " OCaml ocp-indent-vim TODO: package this up?
 set rtp+=~/src/github/ocp-indent-vim
 
+" ShellCheck
+let g:syntastic_sh_checkers = ["shellcheck"]

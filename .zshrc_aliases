@@ -39,7 +39,9 @@ alias vscode='code --disable-gpu'
 alias console='aws ec2 get-console-output --instance-id'
 alias ec2wait='aws ec2 wait instance-running --instance-id'
 alias instance='aws ec2 run-instances --key-name NetBSDKeyPair --image-id'
-alias instances='aws ec2 describe-instances'
+alias instances='aws ec2 describe-instances  --query \
+  "Reservations[*].Instances[*].[InstanceId, Placement.AvailabilityZone, \
+  PublicDnsName, PublicIpAddress, State.Name]" --output table'
 alias running='instances --query Reservations[*].Instances[*].[InstanceId] \
   --filters Name=instance-state-name,Values=running'
 alias start-debian='instance ami-0dedf6a6502877301 --instance-type t2.micro'
@@ -48,7 +50,10 @@ alias start-freebsd='instance ami-0de268ac2498ba33d'
 alias start-netbsd='instance ami-569ed93c --instance-type t1.micro'
 alias start-omnios='instance ami-0a01a5636f3c4f21c --instance-type t1.micro'
 alias start-ubuntu='instance ami-08bc77a2c7eb2b1da --instance-type t1.micro'
-alias term-instances='aws ec2 terminate-instances --instance-ids'
+alias term-instances='aws ec2 terminate-instances \
+  --query "TerminatingInstances[*].[CurrentState.Name, InstanceId]" \
+  --output text \
+  --instance-ids'
 alias term-all-instances='term-instances $(instances --query \
   "Reservations[*].Instances[0].InstanceId" --output text)'
 alias volumes='aws ec2 describe-volumes'
