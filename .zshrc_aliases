@@ -24,7 +24,7 @@ alias journalctl='sudo journalctl'
 alias systemctl='sudo systemctl'
 alias pacu='sudo pacman -Syu --noconfirm'
 alias auru='yay -Syu'
-alias se='ls /usr/bin | grep'
+alias pacusage='expac "%n %m" -l "\n" -Q $(pacman -Qq) | sort -rhk 2 | less'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias jn='jupyter notebook'

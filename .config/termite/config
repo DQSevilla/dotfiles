@@ -5,7 +5,7 @@
 #clickable_url = true
 #dynamic_title = true
 #font = Monospace 9
-font = SauceCodePro Nerd Font 9
+font = SauceCodePro Nerd Font 10
 # old font:
 #font = Source Code Pro for Powerline 9
 #fullscreen = true

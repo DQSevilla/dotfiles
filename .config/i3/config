@@ -154,6 +154,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+p move workspace to output right
+
 # Old colors in order: #2f343f, #2f343f, #f3f4f5, #676e7d, #e53935, #a0a0a0
 
 set $bg-color            #262626
