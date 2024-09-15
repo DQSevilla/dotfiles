@@ -30,7 +30,11 @@ plugins=(
 	# zsh-history-substring-search
 )
 
-source $ZSH/oh-my-zsh.sh
+source "${ZSH}/oh-my-zsh.sh"
+
+if [[ -f "${ZDOTDIR}/.zsh_aliases" ]]; then
+	source "${ZDOTDIR}/.zsh_aliases"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

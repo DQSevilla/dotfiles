@@ -1,0 +1,27 @@
+#### Aliases ####
+
+### Single Character Aliases (Rare) ###
+alias e="${EDITOR}"
+
+### Zsh Config ###
+alias zource="exec zsh"
+
+### Common File Editing ###
+alias ezsh="e ${ZDOTDIR}"
+alias ezshrc="e ${ZDOTDIR}/.zshrc"
+alias earc="e ${ZDOTDIR}/.zsh_aliases"
+alias etrc="e ${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
+alias erc="e ${XDG_CONFIG_HOME}/nvim"
+
+### XDG Re-Homing ###
+alias wget="wget --hsts-file=${XDG_CACHE_HOME}/wget-hsts"
+alias gpg2="gpg2 --homedir ${XDG_DATA_HOME}/gnupg"
+
+### ls ###
+alias ls="ls --color=tty -F"
+alias la="ls -Ah"
+alias ll="ls -lAh"
+
+alias exa="exa -F"
+
+alias ff="fastfetch"
