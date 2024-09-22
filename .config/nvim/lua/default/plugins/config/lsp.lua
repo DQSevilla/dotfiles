@@ -19,6 +19,9 @@ local servers = {
 	lua_ls = {
 		settings = {
 			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				},
 				completion = { callSnippet = "Replace" },
 			},
 		},
@@ -44,7 +47,7 @@ local servers = {
 -- Language formatters
 local formatters_by_ft = {
 	lua = { "stylua" },
-	go = { "gofumpt", "goimports-reviser" },
+	go = { "gofumpt", "goimports", "goimports-reviser" },
 }
 
 -- Ensuring servers and tools are installed. See :Mason
@@ -108,11 +111,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				desc = "[G]oto [I]mplementation",
 			},
 			-- TODO: trouble.nvim?
-			-- FIXME: trying to get ]d and [d to actually show the full message... shouldn't need to do the following:
+			-- FIXME: I feel like the following should be default behavior...
 			{
 				keys = "]d",
 				fallbackFunc = function() -- TODO: same but for [d?
 					vim.diagnostic.goto_next()
+					vim.diagnostic.open_float()
+				end,
+				desc = "Jump to next [d]iagnostic",
+			},
+			{
+				keys = "[d",
+				fallbackFunc = function()
+					vim.diagnostic.goto_prev()
 					vim.diagnostic.open_float()
 				end,
 				desc = "Jump to next [d]iagnostic",

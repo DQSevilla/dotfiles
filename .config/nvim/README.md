@@ -25,7 +25,6 @@ TODO: links
 
 ## TODO
 
-- [ ] Turn on the autocmd for higlighting yank selection
 - [ ] Spelling
   - [X] Spelling suggestions: z=
   - [ ] Determine when to turn `spell` on and add a toggle
@@ -37,6 +36,7 @@ TODO: links
 
 ## To Learn
 
+- Practice with motions using / and f and t. e.g. d2t<character> and d/<searchterm>
 - Code folding
   - Maybe just look into a plugin like nvim-ufo though
 
